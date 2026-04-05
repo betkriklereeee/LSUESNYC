@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Locksmith Services — Upper East Side NYC | Locksmith Upper East NYC</title>
+<meta name="description" content="Full list of locksmith services on the Upper East Side — emergency lockouts, key duplication, lock repair, master key systems, and more. Call (917) 338-1950.">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #fff; color: #1a1a1a; }
+  a { text-decoration: none; }
+
+  :root {
+    --primary: #2c3e35;
+    --primary-mid: #4a6358;
+    --accent: #c45f3a;
+    --accent-dark: #ad5232;
+    --surface: #f5f0eb;
+    --surface-mid: #ede7e0;
+    --link-light: #b8cdc4;
+  }
+
+  /* ── NAV ── */
+  .nav { background: var(--primary); width: 100%; }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 32px; height: 58px; max-width: 1200px; margin: 0 auto; }
+  .nav-logo { font-size: 15px; font-weight: 700; color: #fff; white-space: nowrap; text-decoration: none; }
+  .nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
+  .nav-links li { position: relative; }
+  .nav-links a, .nav-links > li > button { background: none; border: none; cursor: pointer; font-size: 13px; color: var(--link-light); padding: 8px 12px; display: flex; align-items: center; gap: 5px; border-radius: 4px; white-space: nowrap; text-decoration: none; font-family: Arial, sans-serif; }
+  .nav-links a:hover, .nav-links > li > button:hover { color: #fff; background: rgba(255,255,255,0.08); }
+  .nav-links .active a, .nav-links .active button { color: #fff; }
+  .chevron { width: 10px; height: 10px; fill: none; stroke: currentColor; stroke-width: 2.5; transition: transform 0.2s; }
+  .nav-links li:hover .chevron { transform: rotate(180deg); }
+  .dropdown { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #ddd8d0; border-radius: 8px; min-width: 230px; padding: 8px 0; z-index: 200; box-shadow: 0 4px 16px rgba(0,0,0,0.10); }
+  .dropdown::before { content: ''; position: absolute; top: -8px; left: 0; width: 100%; height: 8px; background: transparent; }
+  .nav-links li:hover .dropdown { display: block; }
+  .dd-group-label { font-size: 10px; letter-spacing: 0.09em; color: #999; padding: 10px 16px 4px; text-transform: uppercase; font-weight: 700; }
+  .dropdown a { display: block; font-size: 13px; color: var(--primary) !important; padding: 8px 16px; }
+  .dropdown a:hover { background: var(--surface); color: var(--primary) !important; }
+  .dd-divider { border: none; border-top: 1px solid #f0ece6; margin: 6px 0; }
+  .nav-cta { background: var(--accent); color: #fff; border: none; border-radius: 5px; font-size: 13px; font-weight: 700; padding: 9px 20px; cursor: pointer; white-space: nowrap; text-decoration: none; font-family: Arial, sans-serif; }
+  .nav-cta:hover { background: var(--accent-dark); }
+
+  /* ── MOBILE NAV ── */
+  .mobile-nav { display: none; background: var(--primary); width: 100%; position: relative; z-index: 100; }
+  .mobile-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 16px; height: 54px; }
+  .mobile-logo { font-size: 14px; font-weight: 700; color: #fff; }
+  .hamburger { background: none; border: none; cursor: pointer; padding: 6px; display: flex; flex-direction: column; gap: 5px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.25s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 150; }
+  .overlay.active { display: block; }
+  .offcanvas { position: fixed; top: 0; right: -100%; width: 85%; max-width: 320px; height: 100%; background: var(--primary); z-index: 200; transition: right 0.28s ease; overflow-y: auto; display: flex; flex-direction: column; }
+  .offcanvas.open { right: 0; }
+  .oc-header { display: flex; align-items: center; justify-content: space-between; padding: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); flex-shrink: 0; }
+  .oc-logo { font-size: 14px; font-weight: 700; color: #fff; }
+  .oc-close { background: none; border: none; color: rgba(255,255,255,0.7); font-size: 22px; cursor: pointer; line-height: 1; }
+  .oc-links { list-style: none; padding: 8px 0; flex: 1; }
+  .oc-links > li > a, .oc-links > li > button { background: none; border: none; cursor: pointer; width: 100%; text-align: left; font-size: 15px; color: var(--link-light); padding: 13px 20px; display: flex; justify-content: space-between; align-items: center; font-family: Arial, sans-serif; text-decoration: none; }
+  .oc-links > li > a:hover, .oc-links > li > button:hover { background: rgba(255,255,255,0.07); color: #fff; }
+  .oc-chevron { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 2.5; transition: transform 0.2s; }
+  .oc-chevron.rotated { transform: rotate(180deg); }
+  .oc-sub { list-style: none; background: rgba(0,0,0,0.2); display: none; }
+  .oc-sub.open { display: block; }
+  .oc-sub-label { font-size: 10px; letter-spacing: 0.09em; color: rgba(255,255,255,0.35); padding: 10px 20px 4px 28px; text-transform: uppercase; font-weight: 700; }
+  .oc-sub li a { display: block; font-size: 14px; color: #93b5a8; padding: 10px 20px 10px 28px; text-decoration: none; }
+  .oc-sub li a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+  .oc-sub-divider { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 4px 0; }
+  .oc-footer { padding: 16px; border-top: 1px solid rgba(255,255,255,0.1); flex-shrink: 0; }
+  .oc-cta { display: block; background: var(--accent); color: #fff; text-align: center; border-radius: 5px; font-size: 15px; font-weight: 700; padding: 13px; text-decoration: none; font-family: Arial, sans-serif; margin-bottom: 10px; }
+  .oc-cta:hover { background: var(--accent-dark); }
+  .oc-contact-info { text-align: center; font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.8; }
+  .oc-contact-info a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  .sticky-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--accent); height: 48px; align-items: center; justify-content: center; z-index: 100; }
+  .sticky-bar a { color: #fff; font-size: 15px; font-weight: 700; text-decoration: none; font-family: Arial, sans-serif; }
+
+  /* ── PAGE HERO ── */
+  .page-hero { background: var(--primary); padding: 56px 32px; }
+  .page-hero-inner { max-width: 1200px; margin: 0 auto; }
+  .breadcrumb { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 14px; }
+  .breadcrumb a { color: rgba(255,255,255,0.4); }
+  .breadcrumb a:hover { color: rgba(255,255,255,0.7); }
+  .page-hero h1 { font-size: 36px; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 14px; max-width: 640px; }
+  .page-hero p { font-size: 17px; color: var(--link-light); line-height: 1.6; max-width: 560px; }
+
+  /* ── SERVICES BODY ── */
+  .services-body { max-width: 1200px; margin: 0 auto; padding: 64px 32px 80px; }
+
+  /* ── INTRO SECTION ── */
+  .intro-section { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-bottom: 64px; }
+  .section-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 10px; }
+  .intro-title { font-size: 26px; font-weight: 700; color: var(--primary); line-height: 1.3; margin-bottom: 16px; }
+  .intro-body { font-size: 15px; color: #444; line-height: 1.75; margin-bottom: 12px; }
+  .intro-body:last-child { margin-bottom: 0; }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; align-self: stretch; }
+  .stat-card { background: var(--surface); border: 1px solid var(--surface-mid); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: center; }
+  .stat-num { font-size: 22px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+  .stat-label { font-size: 13px; color: #555; line-height: 1.4; }
+
+  /* ── EXPECT BLOCK ── */
+  .expect-block { margin-bottom: 64px; }
+  .expect-grid { display: flex; flex-direction: column; gap: 0; margin-top: 20px; border: 1px solid var(--surface-mid); border-radius: 8px; overflow: hidden; }
+  .expect-item { display: flex; align-items: flex-start; gap: 20px; padding: 24px; background: #fff; border-bottom: 1px solid var(--surface-mid); }
+  .expect-item:last-child { border-bottom: none; }
+  .expect-num { font-size: 28px; font-weight: 700; color: var(--surface-mid); line-height: 1; flex-shrink: 0; width: 40px; }
+  .expect-item h3 { font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+  .expect-item p { font-size: 14px; color: #555; line-height: 1.65; }
+
+  .section-divider { border: none; border-top: 1.5px solid var(--surface-mid); margin-bottom: 56px; }
+
+  .group { margin-bottom: 56px; }
+  .group:last-child { margin-bottom: 0; }
+  .group-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1.5px solid var(--surface-mid); }
+  .group-label { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: #fff; background: var(--accent); padding: 4px 10px; border-radius: 3px; }
+  .group-title { font-size: 22px; font-weight: 700; color: var(--primary); }
+
+  .svc-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .svc-item { background: var(--surface); border-radius: 8px; padding: 22px 24px; display: flex; flex-direction: column; gap: 8px; border: 1px solid var(--surface-mid); transition: box-shadow 0.2s; }
+  .svc-item:hover { box-shadow: 0 4px 16px rgba(44,62,53,0.09); }
+  .svc-item h3 { font-size: 16px; font-weight: 700; color: var(--primary); }
+  .svc-item p { font-size: 14px; color: #555; line-height: 1.6; flex: 1; }
+  .svc-item a { font-size: 13px; font-weight: 700; color: var(--accent); margin-top: 4px; }
+  .svc-item a:hover { color: var(--accent-dark); }
+
+  /* ── CTA BAND ── */
+  .cta-band { background: var(--surface); border-top: 1px solid var(--surface-mid); padding: 52px 32px; text-align: center; }
+  .cta-band h2 { font-size: 26px; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
+  .cta-band p { font-size: 15px; color: #555; margin-bottom: 24px; }
+  .cta-band a { display: inline-block; background: var(--accent); color: #fff; font-size: 15px; font-weight: 700; padding: 14px 30px; border-radius: 6px; font-family: Arial, sans-serif; }
+  .cta-band a:hover { background: var(--accent-dark); }
+
+  /* ── FOOTER ── */
+  footer { background: #1a2620; padding: 32px; text-align: center; }
+  footer p { font-size: 12px; color: rgba(255,255,255,0.3); line-height: 1.8; }
+  footer a { color: rgba(255,255,255,0.3); }
+  footer a:hover { color: rgba(255,255,255,0.6); }
+
+  /* ── RESPONSIVE ── */
+      @media (max-width: 768px) {
+    .intro-section { grid-template-columns: 1fr; gap: 32px; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+    .nav { display: none; }
+    .mobile-nav { display: block; }
+    .sticky-bar { display: flex; }
+    .page-hero { padding: 40px 20px; }
+    .page-hero h1 { font-size: 26px; }
+    .services-body { padding: 44px 20px 80px; }
+    body { padding-bottom: 48px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- DESKTOP NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Locksmith Upper East NYC</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li class="active">
+        <button>Services
+          <svg class="chevron" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4"/></svg>
+        </button>
+        <div class="dropdown">
+          <div class="dd-group-label">Emergency</div>
+          <a href="/services/emergency-lockout-assistance">Emergency lockout assistance</a>
+          <hr class="dd-divider">
+          <div class="dd-group-label">Key services</div>
+          <a href="/services/key-duplication">Key duplication</a>
+          <a href="/services/baldwin-key">Baldwin key</a>
+          <a href="/services/schlage-key">Schlage key</a>
+          <hr class="dd-divider">
+          <div class="dd-group-label">Lock services</div>
+          <a href="/services/lock-repair-restoration">Lock repair &amp; restoration</a>
+          <a href="/services/master-key-systems">Master key systems</a>
+          <a href="/services/residential-commercial-locks">Residential &amp; commercial locks</a>
+          <hr class="dd-divider">
+          <div class="dd-group-label">Brands</div>
+          <a href="/services/mul-t-lock">Mul-T-Lock</a>
+          <a href="/services/medeco">Medeco</a>
+          <a href="/services/248-lock">248 Lock</a>
+        </div>
+      </li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:9173381950">Call Now</a>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<nav class="mobile-nav">
+  <div class="mobile-inner">
+    <span class="mobile-logo">Locksmith Upper East NYC</span>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<div class="offcanvas" id="offcanvas">
+  <div class="oc-header">
+    <span class="oc-logo">Locksmith Upper East NYC</span>
+    <button class="oc-close" onclick="closeMenu()">&#10005;</button>
+  </div>
+  <ul class="oc-links">
+    <li><a href="/">Home</a></li>
+    <li>
+      <button onclick="toggleSub(this)">Services
+        <svg class="oc-chevron" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4"/></svg>
+      </button>
+      <ul class="oc-sub" id="svc-sub">
+        <li class="oc-sub-label">Emergency</li>
+        <li><a href="/services/emergency-lockout-assistance">Emergency lockout assistance</a></li>
+        <hr class="oc-sub-divider">
+        <li class="oc-sub-label">Key services</li>
+        <li><a href="/services/key-duplication">Key duplication</a></li>
+        <li><a href="/services/baldwin-key">Baldwin key</a></li>
+        <li><a href="/services/schlage-key">Schlage key</a></li>
+        <hr class="oc-sub-divider">
+        <li class="oc-sub-label">Lock services</li>
+        <li><a href="/services/lock-repair-restoration">Lock repair &amp; restoration</a></li>
+        <li><a href="/services/master-key-systems">Master key systems</a></li>
+        <li><a href="/services/residential-commercial-locks">Residential &amp; commercial locks</a></li>
+        <hr class="oc-sub-divider">
+        <li class="oc-sub-label">Brands</li>
+        <li><a href="/services/mul-t-lock">Mul-T-Lock</a></li>
+        <li><a href="/services/medeco">Medeco</a></li>
+        <li><a href="/services/248-lock">248 Lock</a></li>
+      </ul>
+    </li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <div class="oc-footer">
+    <a class="oc-cta" href="tel:9173381950">Call Now</a>
+    <div class="oc-contact-info">
+      <a href="tel:9173381950">(917) 338-1950</a><br>
+      <a href="mailto:safetyhardwarestore@gmail.com">safetyhardwarestore@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; Services</div>
+    <h1>Locksmith Services on the Upper East Side</h1>
+    <p>From emergency lockouts to high-security installations — we cover every locksmith need for residents and businesses across ZIP 10128.</p>
+  </div>
+</div>
+
+<!-- SERVICES BODY -->
+<div class="services-body">
+
+  <!-- INTRO SECTION -->
+  <div class="intro-section">
+    <div class="intro-copy">
+      <p class="section-label">Why Local Matters</p>
+      <h2 class="intro-title">A locksmith who knows your building, your block, and your lock</h2>
+      <p class="intro-body">Most of the Upper East Side runs on the same handful of lock systems — Mul-T-Lock cylinders in prewar co-ops, Medeco deadbolts on brownstone entry doors, Schlage hardware in newer condos. We've been servicing these buildings since the early 1990s. When you call us, you're not getting a dispatch center routing a stranger to your door. You're getting a technician who has likely worked in your building before.</p>
+      <p class="intro-body">We're also straightforward about what a job requires. If your lock needs repair rather than replacement, we'll tell you. If a key can be duplicated in-store rather than ordered, we'll do it on the spot. No unnecessary upsells, no inflated emergency rates — just honest service at a fair price.</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-num">30+</div>
+        <div class="stat-label">Years serving the Upper East Side — we've worked in the buildings, know the locks, and have the relationships to prove it.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">NYC wide</div>
+        <div class="stat-label">Based on the Upper East Side, we serve all five boroughs — with deep roots in Manhattan and fast response across the city.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">Same day</div>
+        <div class="stat-label">Most locksmith requests are handled same day — in-store or on-site. We carry parts for the most common UES lock systems.</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">No dispatch</div>
+        <div class="stat-label">When you call, you reach our team directly — not a call center. We give you a straight answer on timing and cost before any work begins.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="expect-block">
+    <p class="section-label">What to Expect</p>
+    <div class="expect-grid">
+      <div class="expect-item">
+        <div class="expect-num">01</div>
+        <div>
+          <h3>Call or stop by</h3>
+          <p>Reach us by phone or visit the store at 1713 2nd Ave. We'll listen to what you need and give you a straight answer on timing and cost — before any work begins.</p>
+        </div>
+      </div>
+      <div class="expect-item">
+        <div class="expect-num">02</div>
+        <div>
+          <h3>We assess honestly</h3>
+          <p>Our technicians diagnose the issue first. If a repair will do the job, we won't push a replacement. If same-day service is possible, we'll tell you. No surprises.</p>
+        </div>
+      </div>
+      <div class="expect-item">
+        <div class="expect-num">03</div>
+        <div>
+          <h3>Work done right</h3>
+          <p>Most jobs are completed in a single visit — in-store or on-site. We carry parts for the most common UES lock systems so we're rarely waiting on anything.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- EMERGENCY -->
+  <div class="group">
+    <div class="group-header">
+      <span class="group-label">Emergency</span>
+      <span class="group-title">Urgent locksmith response</span>
+    </div>
+    <div class="svc-list">
+      <div class="svc-item">
+        <h3>Emergency lockout assistance</h3>
+        <p>Locked out of your apartment, home, or building? We provide fast, non-destructive entry — day or night, no damage to your door or frame.</p>
+        <a href="/services/emergency-lockout-assistance">Learn more &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY SERVICES -->
+  <div class="group">
+    <div class="group-header">
+      <span class="group-label">Key Services</span>
+      <span class="group-title">Precision cutting for every key system</span>
+    </div>
+    <div class="svc-list">
+      <div class="svc-item">
+        <h3>Key duplication</h3>
+        <p>Exact copies for standard house keys, high-security systems, mailbox keys, and specialty blanks — cut to manufacturer spec on calibrated machines.</p>
+        <a href="/services/key-duplication">Learn more &rarr;</a>
+      </div>
+      <div class="svc-item">
+        <h3>Baldwin key</h3>
+        <p>Precision Baldwin key cutting to match the craftsmanship the brand demands — guaranteed alignment and smooth operation every time.</p>
+        <a href="/services/baldwin-key">Learn more &rarr;</a>
+      </div>
+      <div class="svc-item">
+        <h3>Schlage key</h3>
+        <p>Accurate Schlage key duplication and rekeying for dependable, everyday security across residential and commercial properties.</p>
+        <a href="/services/schlage-key">Learn more &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOCK SERVICES -->
+  <div class="group">
+    <div class="group-header">
+      <span class="group-label">Lock Services</span>
+      <span class="group-title">Installation, repair &amp; access control</span>
+    </div>
+    <div class="svc-list">
+      <div class="svc-item">
+        <h3>Lock repair &amp; restoration</h3>
+        <p>Sticking deadbolts, worn cylinders, antique mortise locks — we restore full function without unnecessary replacement, including historic and decorative hardware.</p>
+        <a href="/services/lock-repair-restoration">Learn more &rarr;</a>
+      </div>
+      <div class="svc-item">
+        <h3>Master key systems</h3>
+        <p>Custom-designed tiered access for multi-unit buildings, offices, and landlords who need control without the key clutter — built on restricted keyways.</p>
+        <a href="/services/master-key-systems">Learn more &rarr;</a>
+      </div>
+      <div class="svc-item">
+        <h3>Residential &amp; commercial locks</h3>
+        <p>Supply, installation, and servicing of top-tier lock hardware from the industry's most trusted brands — for single doors or full property buildouts.</p>
+        <a href="/services/residential-commercial-locks">Learn more &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRANDS -->
+  <div class="group">
+    <div class="group-header">
+      <span class="group-label">Brands</span>
+      <span class="group-title">Authorized dealer &amp; service provider</span>
+    </div>
+    <div class="svc-list">
+      <div class="svc-item">
+        <h3>Mul-T-Lock</h3>
+        <p>Authorized dealer for the full Mul-T-Lock line — MT5+, Interactive®, ClassicPro, and more. Expert installation, key duplication, and cylinder replacement.</p>
+        <a href="/services/mul-t-lock">Learn more &rarr;</a>
+      </div>
+      <div class="svc-item">
+        <h3>Medeco</h3>
+        <p>Installation, rekeying, and maintenance for Medeco deadbolts, cylinders, and padlocks — one of the most tamper-resistant lock systems available.</p>
+        <a href="/services/medeco">Learn more &rarr;</a>
+      </div>
+      <div class="svc-item">
+        <h3>248 Lock</h3>
+        <p>Installation and key duplication for 248 Lock systems — designed and backed by our team for reliable residential and commercial security.</p>
+        <a href="/services/248-lock">Learn more &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <h2>Not sure which service you need?</h2>
+  <p>Call us and we'll point you in the right direction — no runaround, no upsell.</p>
+  <a href="tel:9173381950">Call (917) 338-1950</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    &copy; 2026 Locksmith Upper East NYC &nbsp;|&nbsp;
+    Powered by <a href="https://safetylockhardware.com" target="_blank" rel="noopener">Safety Locksmith &amp; Hardware</a><br>
+    1713 2nd Ave (at 89th St), New York, NY 10128 &nbsp;|&nbsp;
+    <a href="tel:9173381950">(917) 338-1950</a> &nbsp;|&nbsp;
+    <a href="mailto:safetyhardwarestore@gmail.com">safetyhardwarestore@gmail.com</a>
+  </p>
+</footer>
+
+<div class="sticky-bar">
+  <a href="tel:9173381950">Call Now &mdash; (917) 338-1950</a>
+</div>
+
+<script>
+  function toggleMenu() {
+    var oc = document.getElementById('offcanvas'), ov = document.getElementById('overlay'), hb = document.getElementById('hamburger');
+    if (oc.classList.contains('open')) { closeMenu(); }
+    else { oc.classList.add('open'); ov.classList.add('active'); hb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  }
+  function closeMenu() {
+    document.getElementById('offcanvas').classList.remove('open');
+    document.getElementById('overlay').classList.remove('active');
+    document.getElementById('hamburger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function toggleSub(btn) {
+    var sub = btn.nextElementSibling, chev = btn.querySelector('.oc-chevron');
+    sub.classList.toggle('open'); chev.classList.toggle('rotated');
+  }
+</script>
+</body>
+</html>
