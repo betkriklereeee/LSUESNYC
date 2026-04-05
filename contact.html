@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Locksmith Upper East NYC</title>
+<meta name="description" content="Contact Locksmith Upper East NYC — call (917) 338-1950 or send us a message. Visit our store at 1713 2nd Ave, New York, NY 10128.">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #fff; color: #1a1a1a; }
+  a { text-decoration: none; }
+  :root {
+    --primary: #2c3e35; --primary-mid: #4a6358; --accent: #c45f3a; --accent-dark: #ad5232;
+    --surface: #f5f0eb; --surface-mid: #ede7e0; --link-light: #b8cdc4;
+  }
+  .nav { background: var(--primary); width: 100%; }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 32px; height: 58px; max-width: 1200px; margin: 0 auto; }
+  .nav-logo { font-size: 15px; font-weight: 700; color: #fff; white-space: nowrap; text-decoration: none; }
+  .nav-links { display: flex; align-items: center; gap: 2px; list-style: none; }
+  .nav-links li { position: relative; }
+  .nav-links a, .nav-links > li > button { background: none; border: none; cursor: pointer; font-size: 13px; color: var(--link-light); padding: 8px 12px; display: flex; align-items: center; gap: 5px; border-radius: 4px; white-space: nowrap; text-decoration: none; font-family: Arial, sans-serif; }
+  .nav-links a:hover, .nav-links > li > button:hover { color: #fff; background: rgba(255,255,255,0.08); }
+  .nav-links .active > a { color: #fff; }
+  .chevron { width: 10px; height: 10px; fill: none; stroke: currentColor; stroke-width: 2.5; transition: transform 0.2s; }
+  .nav-links li:hover .chevron { transform: rotate(180deg); }
+  .dropdown { display: none; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #ddd8d0; border-radius: 8px; min-width: 230px; padding: 8px 0; z-index: 200; box-shadow: 0 4px 16px rgba(0,0,0,0.10); }
+  .dropdown::before { content: ''; position: absolute; top: -8px; left: 0; width: 100%; height: 8px; background: transparent; }
+  .nav-links li:hover .dropdown { display: block; }
+  .dd-group-label { font-size: 10px; letter-spacing: 0.09em; color: #999; padding: 10px 16px 4px; text-transform: uppercase; font-weight: 700; }
+  .dropdown a { display: block; font-size: 13px; color: var(--primary) !important; padding: 8px 16px; }
+  .dropdown a:hover { background: var(--surface); color: var(--primary) !important; }
+  .dd-divider { border: none; border-top: 1px solid #f0ece6; margin: 6px 0; }
+  .nav-cta { background: var(--accent); color: #fff; border: none; border-radius: 5px; font-size: 13px; font-weight: 700; padding: 9px 20px; cursor: pointer; white-space: nowrap; text-decoration: none; font-family: Arial, sans-serif; }
+  .nav-cta:hover { background: var(--accent-dark); }
+  .mobile-nav { display: none; background: var(--primary); width: 100%; position: relative; z-index: 100; }
+  .mobile-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 16px; height: 54px; }
+  .mobile-logo { font-size: 14px; font-weight: 700; color: #fff; }
+  .hamburger { background: none; border: none; cursor: pointer; padding: 6px; display: flex; flex-direction: column; gap: 5px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.25s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 150; }
+  .overlay.active { display: block; }
+  .offcanvas { position: fixed; top: 0; right: -100%; width: 85%; max-width: 320px; height: 100%; background: var(--primary); z-index: 200; transition: right 0.28s ease; overflow-y: auto; display: flex; flex-direction: column; }
+  .offcanvas.open { right: 0; }
+  .oc-header { display: flex; align-items: center; justify-content: space-between; padding: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); flex-shrink: 0; }
+  .oc-logo { font-size: 14px; font-weight: 700; color: #fff; }
+  .oc-close { background: none; border: none; color: rgba(255,255,255,0.7); font-size: 22px; cursor: pointer; line-height: 1; }
+  .oc-links { list-style: none; padding: 8px 0; flex: 1; }
+  .oc-links > li > a, .oc-links > li > button { background: none; border: none; cursor: pointer; width: 100%; text-align: left; font-size: 15px; color: var(--link-light); padding: 13px 20px; display: flex; justify-content: space-between; align-items: center; font-family: Arial, sans-serif; text-decoration: none; }
+  .oc-links > li > a:hover, .oc-links > li > button:hover { background: rgba(255,255,255,0.07); color: #fff; }
+  .oc-chevron { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 2.5; transition: transform 0.2s; }
+  .oc-chevron.rotated { transform: rotate(180deg); }
+  .oc-sub { list-style: none; background: rgba(0,0,0,0.2); display: none; }
+  .oc-sub.open { display: block; }
+  .oc-sub-label { font-size: 10px; letter-spacing: 0.09em; color: rgba(255,255,255,0.35); padding: 10px 20px 4px 28px; text-transform: uppercase; font-weight: 700; }
+  .oc-sub li a { display: block; font-size: 14px; color: #93b5a8; padding: 10px 20px 10px 28px; text-decoration: none; }
+  .oc-sub li a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+  .oc-sub-divider { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 4px 0; }
+  .oc-footer { padding: 16px; border-top: 1px solid rgba(255,255,255,0.1); flex-shrink: 0; }
+  .oc-cta { display: block; background: var(--accent); color: #fff; text-align: center; border-radius: 5px; font-size: 15px; font-weight: 700; padding: 13px; text-decoration: none; font-family: Arial, sans-serif; margin-bottom: 10px; }
+  .oc-cta:hover { background: var(--accent-dark); }
+  .oc-contact-info { text-align: center; font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.8; }
+  .oc-contact-info a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  .sticky-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--accent); height: 48px; align-items: center; justify-content: center; z-index: 100; }
+  .sticky-bar a { color: #fff; font-size: 15px; font-weight: 700; text-decoration: none; font-family: Arial, sans-serif; }
+
+  /* PAGE HERO */
+  .page-hero { background: var(--primary); padding: 56px 32px; }
+  .page-hero-inner { max-width: 1200px; margin: 0 auto; }
+  .breadcrumb { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 14px; }
+  .breadcrumb a { color: rgba(255,255,255,0.4); }
+  .breadcrumb a:hover { color: rgba(255,255,255,0.7); }
+  .breadcrumb span { color: rgba(255,255,255,0.7); }
+  .page-hero h1 { font-size: 36px; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 14px; max-width: 680px; }
+  .page-hero p { font-size: 17px; color: var(--link-light); line-height: 1.6; max-width: 560px; }
+
+  /* BODY */
+  .contact-body { max-width: 1200px; margin: 0 auto; padding: 64px 32px 80px; display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: start; }
+
+  /* FORM */
+  .form-section h2 { font-size: 24px; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+  .form-section p { font-size: 15px; color: #555; line-height: 1.6; margin-bottom: 28px; }
+
+  .contact-form { display: flex; flex-direction: column; gap: 18px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label { font-size: 13px; font-weight: 700; color: var(--primary); }
+  .field input, .field select, .field textarea {
+    font-family: Arial, sans-serif; font-size: 14px; color: #1a1a1a;
+    border: 1.5px solid var(--surface-mid); border-radius: 6px;
+    padding: 11px 14px; background: #fff; outline: none;
+    transition: border-color 0.15s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--primary-mid); }
+  .field textarea { resize: vertical; min-height: 120px; }
+  .field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%234a6358' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+
+  .submit-btn {
+    background: var(--accent); color: #fff; border: none; border-radius: 6px;
+    font-size: 15px; font-weight: 700; padding: 14px 28px; cursor: pointer;
+    font-family: Arial, sans-serif; align-self: flex-start; transition: background 0.15s;
+  }
+  .submit-btn:hover { background: var(--accent-dark); }
+  .submit-btn:disabled { background: #aaa; cursor: not-allowed; }
+
+  .form-note { font-size: 12px; color: #888; margin-top: -8px; }
+
+  /* SUCCESS / ERROR */
+  .form-success { display: none; background: #eaf4ee; border: 1px solid #b2d8bc; border-radius: 8px; padding: 20px 24px; }
+  .form-success h3 { font-size: 16px; font-weight: 700; color: #2a6040; margin-bottom: 6px; }
+  .form-success p { font-size: 14px; color: #3a7050; margin: 0; }
+  .form-error { display: none; background: #fdf0ed; border: 1px solid #f0b8a8; border-radius: 8px; padding: 16px 20px; font-size: 14px; color: var(--accent-dark); margin-top: 4px; }
+
+  /* SIDEBAR */
+  .sidebar { display: flex; flex-direction: column; gap: 20px; }
+  .sidebar-card { background: var(--surface); border-radius: 8px; padding: 24px; border: 1px solid var(--surface-mid); }
+  .sidebar-card.accent-card { background: var(--primary); border-color: var(--primary); }
+  .sidebar-card h3 { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
+  .accent-card h3 { color: #fff; }
+  .sidebar-card p { font-size: 14px; color: #555; line-height: 1.6; }
+  .accent-card p { color: var(--link-light); margin-bottom: 16px; }
+  .sidebar-cta { display: block; background: var(--accent); color: #fff; text-align: center; font-size: 14px; font-weight: 700; padding: 12px; border-radius: 5px; font-family: Arial, sans-serif; }
+  .sidebar-cta:hover { background: var(--accent-dark); }
+  .contact-detail { display: flex; flex-direction: column; gap: 14px; }
+  .contact-row { display: flex; flex-direction: column; gap: 2px; }
+  .contact-row .label { font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--primary-mid); font-weight: 700; }
+  .contact-row .value { font-size: 14px; color: #333; }
+  .contact-row .value a { color: var(--accent); font-weight: 700; }
+  .hours-list { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+  .hours-list li { font-size: 14px; color: #555; display: flex; justify-content: space-between; padding-bottom: 6px; border-bottom: 1px solid var(--surface-mid); }
+  .hours-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .hours-list li span { font-weight: 700; color: var(--primary); }
+  .map-frame { border-radius: 8px; overflow: hidden; border: 1px solid var(--surface-mid); }
+  .map-frame iframe { display: block; width: 100%; height: 220px; border: none; }
+
+  footer { background: #1a2620; padding: 32px; text-align: center; }
+  footer p { font-size: 12px; color: rgba(255,255,255,0.3); line-height: 1.8; }
+  footer a { color: rgba(255,255,255,0.3); }
+  footer a:hover { color: rgba(255,255,255,0.6); }
+
+  @media (max-width: 900px) { .contact-body { grid-template-columns: 1fr; gap: 40px; } .sidebar { order: -1; } }
+  @media (max-width: 768px) {
+    .nav { display: none; } .mobile-nav { display: block; } .sticky-bar { display: flex; }
+    .page-hero { padding: 40px 20px; } .page-hero h1 { font-size: 26px; }
+    .contact-body { padding: 44px 20px 80px; }
+    .form-row { grid-template-columns: 1fr; }
+    body { padding-bottom: 48px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Locksmith Upper East NYC</a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li>
+        <button>Services <svg class="chevron" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4"/></svg></button>
+        <div class="dropdown">
+          <div class="dd-group-label">Emergency</div>
+          <a href="/services/emergency-lockout-assistance">Emergency lockout assistance</a>
+          <hr class="dd-divider">
+          <div class="dd-group-label">Key services</div>
+          <a href="/services/key-duplication">Key duplication</a>
+          <a href="/services/baldwin-key">Baldwin key</a>
+          <a href="/services/schlage-key">Schlage key</a>
+          <hr class="dd-divider">
+          <div class="dd-group-label">Lock services</div>
+          <a href="/services/lock-repair-restoration">Lock repair &amp; restoration</a>
+          <a href="/services/master-key-systems">Master key systems</a>
+          <a href="/services/residential-commercial-locks">Residential &amp; commercial locks</a>
+          <hr class="dd-divider">
+          <div class="dd-group-label">Brands</div>
+          <a href="/services/mul-t-lock">Mul-T-Lock</a>
+          <a href="/services/medeco">Medeco</a>
+          <a href="/services/248-lock">248 Lock</a>
+        </div>
+      </li>
+      <li><a href="/about">About</a></li>
+      <li class="active"><a href="/contact">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="tel:9173381950">Call Now</a>
+  </div>
+</nav>
+
+<nav class="mobile-nav">
+  <div class="mobile-inner">
+    <span class="mobile-logo">Locksmith Upper East NYC</span>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<div class="offcanvas" id="offcanvas">
+  <div class="oc-header">
+    <span class="oc-logo">Locksmith Upper East NYC</span>
+    <button class="oc-close" onclick="closeMenu()">&#10005;</button>
+  </div>
+  <ul class="oc-links">
+    <li><a href="/">Home</a></li>
+    <li>
+      <button onclick="toggleSub(this)">Services <svg class="oc-chevron" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4"/></svg></button>
+      <ul class="oc-sub">
+        <li class="oc-sub-label">Emergency</li>
+        <li><a href="/services/emergency-lockout-assistance">Emergency lockout assistance</a></li>
+        <hr class="oc-sub-divider">
+        <li class="oc-sub-label">Key services</li>
+        <li><a href="/services/key-duplication">Key duplication</a></li>
+        <li><a href="/services/baldwin-key">Baldwin key</a></li>
+        <li><a href="/services/schlage-key">Schlage key</a></li>
+        <hr class="oc-sub-divider">
+        <li class="oc-sub-label">Lock services</li>
+        <li><a href="/services/lock-repair-restoration">Lock repair &amp; restoration</a></li>
+        <li><a href="/services/master-key-systems">Master key systems</a></li>
+        <li><a href="/services/residential-commercial-locks">Residential &amp; commercial locks</a></li>
+        <hr class="oc-sub-divider">
+        <li class="oc-sub-label">Brands</li>
+        <li><a href="/services/mul-t-lock">Mul-T-Lock</a></li>
+        <li><a href="/services/medeco">Medeco</a></li>
+        <li><a href="/services/248-lock">248 Lock</a></li>
+      </ul>
+    </li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+  <div class="oc-footer">
+    <a class="oc-cta" href="tel:9173381950">Call Now</a>
+    <div class="oc-contact-info">
+      <a href="tel:9173381950">(917) 338-1950</a><br>
+      <a href="mailto:safetyhardwarestore@gmail.com">safetyhardwarestore@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="/">Home</a> &rsaquo; <span>Contact</span></div>
+    <h1>Get in Touch</h1>
+    <p>Call us directly for the fastest response — or send a message and we'll get back to you within 24 hours.</p>
+  </div>
+</div>
+
+<!-- CONTACT BODY -->
+<div class="contact-body">
+
+  <!-- FORM -->
+  <div class="form-section">
+    <h2>Send us a message</h2>
+    <p>For emergencies or time-sensitive requests, please call — forms are checked during business hours only.</p>
+
+    <div class="form-success" id="formSuccess">
+      <h3>Message sent — thank you.</h3>
+      <p>We'll get back to you within 24 hours. For urgent requests, call us directly at <a href="tel:9173381950" style="color:#2a6040;font-weight:700;">(917) 338-1950</a>.</p>
+    </div>
+    <div class="form-error" id="formError">Something went wrong — please try again or call us at (917) 338-1950.</div>
+
+    <form class="contact-form" id="contactForm">
+      <input type="hidden" name="access_key" value="c2feab15-71b4-4bb2-93b2-d896f05c5196">
+      <input type="hidden" name="subject" value="New inquiry — LocksmithUpperEastNYC.com">
+      <input type="hidden" name="from_name" value="Locksmith Upper East NYC Website">
+      <input type="checkbox" name="botcheck" style="display:none;">
+
+      <div class="form-row">
+        <div class="field">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" placeholder="(212) 555-0100">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+      </div>
+
+      <div class="field">
+        <label for="service">What do you need help with?</label>
+        <select id="service" name="service">
+          <option value="" disabled selected>Select a service</option>
+          <option>Emergency lockout assistance</option>
+          <option>Key duplication</option>
+          <option>Baldwin key</option>
+          <option>Schlage key</option>
+          <option>Lock repair &amp; restoration</option>
+          <option>Master key systems</option>
+          <option>Residential &amp; commercial locks</option>
+          <option>Mul-T-Lock</option>
+          <option>Medeco</option>
+          <option>248 Lock</option>
+          <option>Other / not sure</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell us about your lock, building type, or what you're looking to do — the more detail the better."></textarea>
+      </div>
+
+      <p class="form-note">We respond within 24 hours during business hours. For urgent needs, call (917) 338-1950.</p>
+      <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+    </form>
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-card accent-card">
+      <h3>Locked out right now?</h3>
+      <p>Don't fill out a form — call us directly for immediate assistance.</p>
+      <a class="sidebar-cta" href="tel:9173381950">Call (917) 338-1950</a>
+    </div>
+
+    <div class="sidebar-card">
+      <h3>Contact details</h3>
+      <div class="contact-detail">
+        <div class="contact-row">
+          <span class="label">Phone</span>
+          <span class="value"><a href="tel:9173381950">(917) 338-1950</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="label">Email</span>
+          <span class="value"><a href="mailto:safetyhardwarestore@gmail.com" style="color:var(--accent);font-weight:700;">safetyhardwarestore@gmail.com</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="label">Address</span>
+          <span class="value">1713 2nd Ave (at 89th St)<br>New York, NY 10128</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h3>Store hours</h3>
+      <ul class="hours-list">
+        <li>Monday <span>9am – 6pm</span></li>
+        <li>Tuesday <span>9am – 6pm</span></li>
+        <li>Wednesday <span>9am – 6pm</span></li>
+        <li>Thursday <span>9am – 6pm</span></li>
+        <li>Friday <span>9am – 6pm</span></li>
+        <li>Saturday <span>9am – 6pm</span></li>
+        <li>Sunday <span>12pm – 5pm</span></li>
+      </ul>
+    </div>
+
+    <div class="map-frame">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.3!2d-73.9513!3d40.7791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258a3d0c0a0a1%3A0x1!2s1713+2nd+Ave%2C+New+York%2C+NY+10128!5e0!3m2!1sen!2sus!4v1"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <p>
+    &copy; 2026 Locksmith Upper East NYC &nbsp;|&nbsp;
+    Powered by <a href="https://safetylockhardware.com" target="_blank" rel="noopener">Safety Locksmith &amp; Hardware</a><br>
+    1713 2nd Ave (at 89th St), New York, NY 10128 &nbsp;|&nbsp;
+    <a href="tel:9173381950">(917) 338-1950</a> &nbsp;|&nbsp;
+    <a href="mailto:safetyhardwarestore@gmail.com">safetyhardwarestore@gmail.com</a>
+  </p>
+</footer>
+
+<div class="sticky-bar">
+  <a href="tel:9173381950">Call Now &mdash; (917) 338-1950</a>
+</div>
+
+<script>
+  function toggleMenu() {
+    var oc=document.getElementById('offcanvas'),ov=document.getElementById('overlay'),hb=document.getElementById('hamburger');
+    if(oc.classList.contains('open')){closeMenu();}
+    else{oc.classList.add('open');ov.classList.add('active');hb.classList.add('open');document.body.style.overflow='hidden';}
+  }
+  function closeMenu() {
+    document.getElementById('offcanvas').classList.remove('open');
+    document.getElementById('overlay').classList.remove('active');
+    document.getElementById('hamburger').classList.remove('open');
+    document.body.style.overflow='';
+  }
+  function toggleSub(btn) {
+    var sub=btn.nextElementSibling,chev=btn.querySelector('.oc-chevron');
+    sub.classList.toggle('open');chev.classList.toggle('rotated');
+  }
+
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('submitBtn');
+    var success = document.getElementById('formSuccess');
+    var error = document.getElementById('formError');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    error.style.display = 'none';
+    try {
+      var res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(this)))
+      });
+      var data = await res.json();
+      if (data.success) {
+        this.style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        throw new Error(data.message);
+      }
+    } catch(err) {
+      error.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+    }
+  });
+</script>
+</body>
+</html>
